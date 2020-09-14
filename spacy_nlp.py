@@ -6,9 +6,10 @@ Created on Sun Jun 21 18:29:47 2020
 @author: ryan
 """
 # %% Doc setup
-from readin import raw_text
 import spacy, time, pickle, ginza, ja_ginza, ja_ginza_dict
+
 from itertools import chain
+from readin import raw_text
 
 
 # %% Model & Docs Spec

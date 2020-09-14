@@ -7,18 +7,11 @@ Created on Thu Jul 23 21:18:42 2020
 """
 # %% Doc setup
 import altair as alt
-import chart_studio.plotly as py
-import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
-import seaborn as sns
-import sidetable as stb
-import spacy, matplotlib, vega, portpicker, plotly, altair_viewer, chart_studio
+import plotly
 
-from all_particles import particle_df
-from all_particles import particle_stb
-from all_particles import particle_stb_ext
-from all_particles import particledf_split
+from all_particles import particle_df, particle_stb_ext
+
 
 #%%
 alt.themes.enable('dark')
@@ -38,7 +31,6 @@ print(coi)
 
 
 
-#%% head stacked
 stacked_headpos=alt.Chart(particle_stb_ext[particle_stb_ext["Token"].isin(top10)]).mark_bar().encode(
     x=alt.X('sum(percent)', stack="normalize"),
     y='Token',
@@ -56,6 +48,8 @@ top10_head_stacked=alt.vconcat(stacked_headpos, stacked_headtag, stacked_headdep
     color='independent')
 top10_head_stacked.save(
     "outputs/top10_head_stacked.html")
+top10_head_stacked.show()
+
 
 #%% stacked
 stacked_pos=alt.Chart(particle_stb_ext[particle_stb_ext["Token"].isin(top10)]).mark_bar().encode(
@@ -75,6 +69,7 @@ top10_stacked=alt.vconcat(stacked_pos, stacked_tag, stacked_dep).resolve_scale(
     color='independent')
 top10_stacked.save(
     "outputs/top10_stacked.html")
+top10_stacked.show()
 
 #%% sankey 
 #https://gist.github.com/ken333135/09f8793fff5a6df28558b17e516f91ab#file-gensankey
@@ -163,4 +158,3 @@ sankey_Head=plotly.offline.plot(sankey_Head_dict,
                            filename="outputs/sankey_Head.html",
                            validate=False,
                            auto_open=False)
-

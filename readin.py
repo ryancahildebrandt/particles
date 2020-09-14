@@ -6,9 +6,9 @@ Created on Sat Jun 20 16:23:43 2020
 @author: ryan
 """
 # %% Doc setup
-import pandas as pd
-import numpy as np
 import glob, re, string
+import numpy as np
+import pandas as pd
 
 
 # %% Read in single speaker

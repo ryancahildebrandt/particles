@@ -21,13 +21,13 @@ The corpora used for the current project can be found [here](https://www.kaggle.
 
 ### は & が
 ##### Common Heuristics
-+ One common way to differentiate は and が is that は marks the *topic* of a sentence, where が marks the gramatical *subject* in a sentence. 
++ One common way to differentiate は and が is that は marks the *topic* of a sentence, where が marks the grammatical *subject* in a sentence. 
 + In this sense, は can lend more emphasis to the subject it marks as compared to が
 + が tends to be used more in noun and subordinate clauses, and if は is used in these contexts, it tends to be for emphasis
 
 ##### Insights
 + **Token**
-    * は and が are used in much the same contexts, with the main area of divergence occuring in the detailed part of speech
+    * は and が are used in much the same contexts, with the main area of divergence occurring in the detailed part of speech
     * は functions exclusively as a linking particle, while が functions mostly as a case marking particle
 + **Syntactic Head**
     * Whereas が occurs largely with subjects of sentences, は is more evenly split between subjects and indirect objects
@@ -46,7 +46,7 @@ The corpora used for the current project can be found [here](https://www.kaggle.
     * と and も occur almost entirely in the same contexts when looking at dependencies
     * When looking at the tags, と functions as a case marker, while も functions as a linking particle
 + **Syntactic Head**
-    * The largest difference between と and も syntactic heads occurs in the dependencies, with と occurring alongside nominal and adverbial clause modifiers, and も occuring with oblique nominals and indirect objects
+    * The largest difference between と and も syntactic heads occurs in the dependencies, with と occurring alongside nominal and adverbial clause modifiers, and も occurring with oblique nominals and indirect objects
 
 ### か & や
 ##### Common Heuristics
@@ -56,10 +56,10 @@ The corpora used for the current project can be found [here](https://www.kaggle.
 
 ##### Insights
 + **Token**
-    * や occurs mostly as a case marker, while か (as might be expected from the different functions of the particle) is split between case marking and auxilliary particle roles
-    * This pattern is seen for part of speech and tags as well, with や occuring mostly as an adposition and か split between adposition and particle 
+    * や occurs mostly as a case marker, while か (as might be expected from the different functions of the particle) is split between case marking and auxiliary particle roles
+    * This pattern is seen for part of speech and tags as well, with や occurring mostly as an adposition and か split between adposition and particle 
 + **Syntactic Head**
-    * The main contrast between these particles shows across dependencies, part of speech, and tags, with か occuring primarily with roots & verbs, and や occuring alongside nouns
+    * The main contrast between these particles shows across dependencies, part of speech, and tags, with か occurring primarily with roots & verbs, and や occurring alongside nouns
 
 ### と & って
 ##### Common Heuristics
@@ -97,16 +97,16 @@ The corpora used for the current project can be found [here](https://www.kaggle.
 + All of these particles come at the end of a sentence (or a word, in some cases), each adding a different nuance to the utterance
 + ね is used to seek agreement or confirmation at the end of a statement without explicitly asking a question
 + よ is used to add emphasis to a statement, and is a more forward/assertive ending than ね
-+ わ is used to make an essertion or express an opinion, often with a softer feel than other similar particles
-+ さ can be used similarly to な, ね, and よ, functioning to add emphasis or express an opinion (with the possibilty for confirmation) in a more gruff manner
++ わ is used to make an assertion or express an opinion, often with a softer feel than other similar particles
++ さ can be used similarly to な, ね, and よ, functioning to add emphasis or express an opinion (with the possibility for confirmation) in a more gruff manner
 + な is used very similarly to ね in that it asserts something and opens the statement to confirmation/agreement, albeit with a more rough feel to it 
-+ ん takes an assertion or factual statement (when combined with desu) and puts it into a more explanatory or sometimes apologetic context 
++ ん takes an assertion or factual statement (when combined with です) and puts it into a more explanatory or sometimes apologetic context 
 
 ##### Insights
 + **Token**
     * ん stands apart from the rest of the group, functioning almost exclusively as a marking particle and subordinating conjunction
     * さ has a wider range of functions, including compound and nominal modifier, that the other particles don't share
-    * the rest of the particles in this group function largely as auxilliary, sentence ending particles
+    * the rest of the particles in this group function largely as auxiliary, sentence ending particles
 + **Syntactic Head**
     * These particles occur mostly with Roots, adverbial clauses, adjectival modifiers, and nominal modifiers
     * さ occurs with pronouns and particles where other particles do not

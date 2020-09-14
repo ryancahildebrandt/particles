@@ -7,10 +7,11 @@ Created on Sat Jul 25 20:13:18 2020
 """
 
 # %% Doc setup
-import spacy, time, pickle, ginza, ja_ginza, ja_ginza_dict
-import pandas as pd
 import numpy as np
+import pandas as pd
 import sidetable as stb
+import spacy, time, pickle, ginza, ja_ginza, ja_ginza_dict
+
 from itertools import chain
 nlp = spacy.load("ja_ginza")
 docs = pickle.load(open("docs.p", "rb"))
