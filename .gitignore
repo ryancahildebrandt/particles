@@ -1,0 +1,11 @@
+.ipynb*
+.spy*
+__pycache__
+dp*
+requirements.txt
+data/
+*sublime*
+outputs
+att_df.csv
+docs.p
+raw_str.txt
