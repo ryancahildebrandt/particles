@@ -5,7 +5,7 @@ Created on Thu Jul 23 21:18:42 2020
 
 @author: ryan
 """
-# %% Doc setup
+# Doc setup
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -14,12 +14,12 @@ import sidetable as stb
 from PIL import Image
 from wordcloud import WordCloud
 
-# %% read in att and chunk dfs from csv
+# read in att and chunk dfs from csv
 att_df_read=pd.read_csv("att_df.csv", encoding="utf-8")
 att_df_read.Tag=att_df_read.Tag.replace("\-","_",regex=True)
 att_df_read.HeadTag=att_df_read.HeadTag.replace("\-","_",regex=True)
 
-#%%  dicts & translation functions
+#  dicts & translation functions
 
 pdt_dict={
     'POS':'Part of Speech (Simple)',
@@ -82,7 +82,7 @@ tag_dict={
 
 
 
-# %% particle dfs & eda
+# particle dfs & eda
 particle_df=att_df_read[att_df_read.Tag.str.contains("助詞")]
 particle_stb = particle_df.stb.freq(["Token"])[:]
 particle_stb_ext = particle_df.stb.freq(["Token","POS","Tag","Dep","HeadPOS","HeadTag","HeadDep"])[:]
@@ -90,7 +90,7 @@ particle_stb_ext = particle_df.stb.freq(["Token","POS","Tag","Dep","HeadPOS","He
 print(particle_df.head())
 print(particle_stb.head())
 
-# %% split
+# split
 def particledf_split (particle):
     data = particle_df[particle_df.Token==particle]
     df = pd.DataFrame(data)
@@ -100,7 +100,7 @@ def particledf_split (particle):
     return df,side
 
 
-# %% cloud
+# cloud
 bubble_mask=np.array(Image.open("data/mask.png"))
 def transform_format(val):
     if val == 0:

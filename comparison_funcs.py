@@ -5,16 +5,19 @@ Created on Thu Jul 23 21:18:42 2020
 
 @author: ryan
 """
-# %% Doc setup
+# Doc setup
 import altair as alt
 import numpy as np
 import pandas as pd
 import re
 import spacy
 
-from all_particles import ht_dict, particle_df, pdt_dict, tag_dict
+from all_particles import ht_dict
+from all_particles import particle_df
+from all_particles import pdt_dict
+from all_particles import tag_dict
 
-#%% lists & notes
+# lists & notes
 alt.themes.enable('dark')
 
 coi=["は","が","に","へ","で","と","も","か","や","ね","よ","わ","さ","な","ん","と","って"]
@@ -43,7 +46,7 @@ df_list=[
 #'Token', 'Head', 'HeadPOS', 'HeadTag', 'HeadDep', 'Lemma', 'Norm', 'Stop', 'POS', 'Tag', 'Dep', 'Children'
 
 
-# %% comp dfs
+# comp dfs
 
 def div_dfs (particle1, particle2, head_token, pos_tag_dep):
     
@@ -82,7 +85,7 @@ def div_dict_func ():
 
 div_df_dict = div_dict_func()
 
-# %% diverging
+# diverging
 
 def diverging_single (df_key):
     
@@ -131,7 +134,7 @@ def diverging_single (df_key):
     return d
 
 
-#%% div
+# div
 def diverging_six (p1,p2):
     
     six_list=[
@@ -169,7 +172,7 @@ def diverging_six (p1,p2):
 
 for a,b in coi_div:
     exec(f"div_six_{a+b} = diverging_six(a,b)")
-#%% grpd dfs
+# grpd dfs
 
 coi3=["に","へ","で"]
 coi4=["ね","よ","わ","さ","な","ん"]
@@ -208,7 +211,7 @@ for a,b in [[x,y] for x in ht_list for y in pdt_list]:
     exec(f"grpd_coi4_{a+b} = grpd_dfs(coi4,a,b)")
 
     
-#%% grouped 
+# grouped 
 
 
 def grouped_single (df_name):

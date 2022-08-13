@@ -5,22 +5,20 @@ Created on Sat Jun 20 16:23:43 2020
 
 @author: ryan
 """
-# %% Doc setup
-import glob, re, string
+# Doc setup
+import glob
 import numpy as np
 import pandas as pd
+import re
+import string
 
-
-# %% Read in single speaker
+# Read in single speaker
 jsss = pd.read_csv("data/japanese-single-speaker-speech-dataset/transcript.txt",
                      header=None,
                      sep="|",
                      names=["file","JA","RJ","duration"]).JA
 
-
-
-
-# %% Read in knb
+# Read in knb
 knb_gourmet = pd.read_csv("data/knb-corpus/knbc/knbc/corpus2/Gourmet.tsv",
                         header=None,
                         sep="\t",
@@ -42,13 +40,13 @@ knb_full = knb_gourmet.append(knb_keitai).append(knb_kyoto).append(knb_sports).f
 knb_full["JA"] = knb_full.JA1 + knb_full.JA2 + knb_full.JA3 + knb_full.JA4 + knb_full.JA5
 knb = knb_full.JA
 
-# %% Read in tatoeba
+# Read in tatoeba
 tatoeba = pd.read_csv("data/tatoeba.txt",
                       header=None,
                       sep=";;",
                       names=["EN", "JP", "Source"]).JP
 
-# %% All together now
+# All together now
 raw_text = jsss.append(knb).append(tatoeba).astype("unicode").str.strip()
 raw_str = raw_text.str.cat(sep=" ").strip()
 raw_str = re.sub(r"[^一-龯ぁ-ゞァ-ヶ０-９。、？！]","", raw_str)

@@ -6,18 +6,23 @@ Created on Sat Jul 25 20:13:18 2020
 @author: ryan
 """
 
-# %% Doc setup
+# Doc setup
+import ginza
+import ja_ginza
+import ja_ginza_dict
 import numpy as np
 import pandas as pd
+import pickle
 import sidetable as stb
-import spacy, time, pickle, ginza, ja_ginza, ja_ginza_dict
+import spacy
+import time
 
 from itertools import chain
+
 nlp = spacy.load("ja_ginza")
 docs = pickle.load(open("docs.p", "rb"))
 
-# %% att & chunk dfs
-
+# att & chunk dfs
 start = time.time()
 #docs=docs[:10]
 att_df = pd.DataFrame()

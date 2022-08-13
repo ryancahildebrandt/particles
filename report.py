@@ -5,13 +5,29 @@ Created on Tue Sep  8 20:18:13 2020
 
 @author: ryan
 """
-# %% Doc setup
+# Doc setup
 import datapane as dp
 
-from all_particles import particle_df, particle_stb
-from comparison_funcs import div_six_かや, div_six_とって, div_six_とも, div_six_はが, grpd_coi3_Dep_chart, grpd_coi3_HeadDep_chart, grpd_coi3_HeadPOS_chart, grpd_coi3_HeadTag_chart, grpd_coi3_POS_chart, grpd_coi3_Tag_chart, grpd_coi4_Dep_chart, grpd_coi4_HeadDep_chart, grpd_coi4_HeadPOS_chart, grpd_coi4_HeadTag_chart, grpd_coi4_POS_chart, grpd_coi4_Tag_chart
+from all_particles import particle_df
+from all_particles import particle_stb
+from comparison_funcs import div_six_かや
+from comparison_funcs import div_six_とって
+from comparison_funcs import div_six_とも
+from comparison_funcs import div_six_はが
+from comparison_funcs import grpd_coi3_Dep_chart
+from comparison_funcs import grpd_coi3_HeadDep_chart
+from comparison_funcs import grpd_coi3_HeadPOS_chart
+from comparison_funcs import grpd_coi3_HeadTag_chart
+from comparison_funcs import grpd_coi3_POS_chart
+from comparison_funcs import grpd_coi3_Tag_chart
+from comparison_funcs import grpd_coi4_Dep_chart
+from comparison_funcs import grpd_coi4_HeadDep_chart
+from comparison_funcs import grpd_coi4_HeadPOS_chart
+from comparison_funcs import grpd_coi4_HeadTag_chart
+from comparison_funcs import grpd_coi4_POS_chart
+from comparison_funcs import grpd_coi4_Tag_chart
 
-# %% Reports
+# Reports
 rprt = dp.Report(dp.Markdown("""
 # The Numbers on は, が,  & Co.
 > ##### Contextual particle frequency in written Japanese, taking a swing at the age old question of は vs が

@@ -5,15 +5,14 @@ Created on Thu Jul 23 21:18:42 2020
 
 @author: ryan
 """
-# %% Doc setup
+# Doc setup
 import altair as alt
 import pandas as pd
 import plotly
 
-from all_particles import particle_df, particle_stb_ext
+from all_particles import particle_df
+from all_particles import particle_stb_ext
 
-
-#%%
 alt.themes.enable('dark')
 
 top25=particle_df.Token.value_counts()[:25].index.tolist()
@@ -51,7 +50,7 @@ top10_head_stacked.save(
 top10_head_stacked.show()
 
 
-#%% stacked
+# stacked
 stacked_pos=alt.Chart(particle_stb_ext[particle_stb_ext["Token"].isin(top10)]).mark_bar().encode(
     x=alt.X('sum(percent)', stack="normalize"),
     y='Token',
@@ -71,7 +70,7 @@ top10_stacked.save(
     "outputs/top10_stacked.html")
 top10_stacked.show()
 
-#%% sankey 
+# sankey 
 #https://gist.github.com/ken333135/09f8793fff5a6df28558b17e516f91ab#file-gensankey
 sankey_df = particle_stb_ext[["Token","POS","Tag","Dep","count"]][particle_stb_ext["Token"].isin(top10)]
 sankey_Head_df = particle_stb_ext[["Token","HeadPOS","HeadTag","HeadDep","count"]][particle_stb_ext["Token"].isin(top10)]

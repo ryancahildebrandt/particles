@@ -5,14 +5,18 @@ Created on Sun Jun 21 18:29:47 2020
 
 @author: ryan
 """
-# %% Doc setup
-import spacy, time, pickle, ginza, ja_ginza, ja_ginza_dict
+# Doc setup
+import ginza
+import ja_ginza
+import ja_ginza_dict
+import pickle
+import spacy
+import time
 
 from itertools import chain
 from readin import raw_text
 
-
-# %% Model & Docs Spec
+# Model & Docs Spec
 start = time.time()
 
 nlp = spacy.load("ja_ginza")
